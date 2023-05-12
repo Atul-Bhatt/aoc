@@ -7,14 +7,22 @@ fn main() {
         .expect("Cannot read file.");
 
     let mut floor = 0;
+    let mut first_basement_idx = 0;
+    let mut flag = true;
 
-    for paren in input_paren.chars() {
+    for (idx, paren) in input_paren.chars().enumerate() {
         if paren == '(' {
             floor += 1;
         } else {
             floor -= 1;
         }
+
+        // first position that causes -1 floor
+        if floor == -1 && flag {
+            first_basement_idx = idx+1;
+            flag = false;
+        }
     }
     
-    println!("{floor}");
+    println!("{first_basement_idx}");
 }
