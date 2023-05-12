@@ -6,6 +6,7 @@ fn main() {
     let input_dims = fs::read_to_string("input/day2.txt")
         .expect("Cannot read file.");
     let mut wrapping_paper_size = 0;
+    let mut ribbon_size = 0;
 
     for dimensions in input_dims.lines() {
         let dims_vec: Vec<&str> = dimensions.splitn(3, "x").collect();
@@ -22,7 +23,10 @@ fn main() {
 
         // smallest side
         wrapping_paper_size += min(h*l, min(l*w, w*h));
+        
+        ribbon_size += l*w*h;
+        ribbon_size += min(2*h + 2*l, min(2*l + 2*w, 2*w + 2*h));
     }
 
-    println!("{wrapping_paper_size}");
+    println!("{ribbon_size}");
 }
