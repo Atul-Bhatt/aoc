@@ -23,9 +23,19 @@ fn main() {
 
     let mut vec_points: Vec<Point> = vec![];
     let mut curr_point = (0, 0);
+    let mut curr_point_robo = (0, 0);
+    let mut curr_point_santa = (0, 0);
     let mut temp_point: Point;
 
-    for point in input_string.chars() {
+    for (idx, point) in input_string.chars().enumerate() {
+
+        println!("curr_point: {:?}, robo: {:?}, santa: {:?}", curr_point, curr_point_robo, curr_point_santa);
+
+        if idx % 2 == 0 {
+            curr_point = curr_point_robo;
+        } else {
+            curr_point = curr_point_santa;
+        }
         
         match point {
             '>' => {
@@ -49,9 +59,15 @@ fn main() {
                 },
             _ => { temp_point = Point::new(0, 0); }
         }
-        
+
         if !vec_points.contains(&temp_point) {
             vec_points.push(temp_point);
+        }
+
+        if idx % 2 == 0 {
+            curr_point_robo = curr_point;
+        } else {
+            curr_point_santa = curr_point;
         }
     }
 
