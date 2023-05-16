@@ -18,3 +18,9 @@ Delivering presents to an infinite two-dimensional grid of houses
 ### Day 4
 Given input 'yzbqklnj', find out the smallest decimal number to append to this input which results in a md5 hash that starts with five 0s.
 
+### Day 5
+Count the number of strings that are "nice". A string is nice if --
+- It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
+- It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or aabbccdd (aa, bb, cc, or dd).
+- It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
+
