@@ -6,11 +6,12 @@ fn main() {
     let mut target = 0;
 
     loop {
-        input.push_str(target.to_string().as_str());
-        let digest = md5::compute(input.clone());
+        let mut temp = input.clone();
+        temp.push_str(target.to_string().as_str());
+        let digest = md5::compute(temp.clone());
         
         if format!("{:x}", digest).starts_with("00000") {
-            println!("{:x} {input}", digest);
+            println!("{:x} {temp}", digest);
             break;
         }
 
@@ -20,11 +21,12 @@ fn main() {
     target = 0;
 
     loop {
-        input.push_str(target.to_string().as_str());
-        let digest = md5::compute(input.clone());
+        let mut temp = input.clone();
+        temp.push_str(target.to_string().as_str());
+        let digest = md5::compute(temp.clone());
         
         if format!("{:x}", digest).starts_with("000000") {
-            println!("{:x} {input}", digest);
+            println!("{:x} {temp}", digest);
             break;
         }
 
