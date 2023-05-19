@@ -1,16 +1,5 @@
 use std::fs;
 
-struct Point {
-    x: usize,
-    y: usize,
-}
-
-impl Point {
-    fn new(x: usize, y: usize) -> Point {
-        Point {x, y}
-    }
-}
-
 fn main() {
     // Take input from file
     let input = fs::read_to_string("input/day6.txt")
@@ -28,30 +17,22 @@ fn main() {
             "turn" => {
                 match line_vec[1] {
                     "on" => {
-                        let mut first_point_iter = line_vec[2].split(",");
-                        let mut second_point_iter = line_vec[4].split(",");
-                        first_point = Point::new(first_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                            first_point_iter.next().unwrap().parse::<usize>().unwrap());
-                        second_point = Point::new(second_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                            second_point_iter.next().unwrap().parse::<usize>().unwrap());
+                        let first: Vec<i32> = line_vec[2].split(",").map(|n| n.parse().unwrap()).collect();
+                        let second: Vec<i32> = line_vec[4].split(",").map(|n| n.parse().unwrap()).collect();
                         
-                        for i in first_point.x..=second_point.x {
-                            for j in first_point.y..=second_point.y {
+                        for i in first.0..=second.0 {
+                            for j in first.1..=second.1 {
                                 grid[i][j] += 1;
                             }
                         }
                     },
 
                     "off" => {
-                        let mut first_point_iter = line_vec[2].split(",");
-                        let mut second_point_iter = line_vec[4].split(",");
-                        first_point = Point::new(first_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                            first_point_iter.next().unwrap().parse::<usize>().unwrap());
-                        second_point = Point::new(second_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                            second_point_iter.next().unwrap().parse::<usize>().unwrap());
-
-                        for i in first_point.x..=second_point.x {
-                            for j in first_point.y..=second_point.y {
+                        let first: Vec<i32> = line_vec[2].split(",").map(|n| n.parse().unwrap()).collect();
+                        let second: Vec<i32> = line_vec[4].split(",").map(|n| n.parse().unwrap()).collect();
+                        
+                        for i in first.0..=second.0 {
+                            for j in first.1..=second.1 {
                                 if grid[i][j] > 0 {
                                     grid[i][j] -= 1;
                                 } else {
@@ -66,15 +47,11 @@ fn main() {
             },
 
             "toggle" => {
-                let mut first_point_iter = line_vec[1].split(",");
-                let mut second_point_iter = line_vec[3].split(",");
-                first_point = Point::new(first_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                    first_point_iter.next().unwrap().parse::<usize>().unwrap());
-                second_point = Point::new(second_point_iter.next().unwrap().parse::<usize>().unwrap(),
-                    second_point_iter.next().unwrap().parse::<usize>().unwrap());
+                let first: Vec<i32> = line_vec[1].split(",").map(|n| n.parse().unwrap()).collect();
+                        let second: Vec<i32> = line_vec[3].split(",").map(|n| n.parse().unwrap()).collect();
                 
-                for i in first_point.x..=second_point.x {
-                    for j in first_point.y..=second_point.y {
+                for i in first.0..=second.0 {
+                    for j in first.1..=second.1 {
                         grid[i][j] += 2;
                     }
                 }
