@@ -24,3 +24,8 @@ Count the number of strings that are "nice". A string is nice if --
 - It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or aabbccdd (aa, bb, cc, or dd).
 - It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
 
+### Day 6
+In a two dimensional grid, turn on or off the cells based on given instructions. Instructions are in the following format --
+- turn on 887,9 through 959,629
+- turn off 539,243 through 559,965
+- toggle 720,196 through 897,994
