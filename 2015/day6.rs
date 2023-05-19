@@ -37,7 +37,7 @@ fn main() {
                         
                         for i in first_point.x..=second_point.x {
                             for j in first_point.y..=second_point.y {
-                                grid[i][j] = 1;
+                                grid[i][j] += 1;
                             }
                         }
                     },
@@ -52,7 +52,11 @@ fn main() {
 
                         for i in first_point.x..=second_point.x {
                             for j in first_point.y..=second_point.y {
-                                grid[i][j] = 0;
+                                if grid[i][j] > 0 {
+                                    grid[i][j] -= 1;
+                                } else {
+                                    grid[i][j] = 0;
+                                }
                             }
                         }
                     },
@@ -71,11 +75,7 @@ fn main() {
                 
                 for i in first_point.x..=second_point.x {
                     for j in first_point.y..=second_point.y {
-                        if grid[i][j] == 1 {
-                            grid[i][j] = 0;
-                        } else  {
-                            grid[i][j] = 1;
-                        }
+                        grid[i][j] += 2;
                     }
                 }
             },
@@ -89,9 +89,7 @@ fn main() {
 
     for i in 0..1000 {
         for j in 0..1000 {
-            if grid[i][j] == 1 {
-                light_count += 1;
-            }
+            light_count += grid[i][j];
         }
     }
 
