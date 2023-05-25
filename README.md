@@ -36,3 +36,8 @@ Perform bitwise operations based on instructions and find out what the final sig
 - 456 -> y
 - x AND y -> a
 The wire "a" will contain contain signal 72
+
+### Day 8
+Find the difference in String length and encoded string length.
+- "" is 2 characters of code (the two double quotes), but the string contains zero characters.
+- "aaa\"aaa" is 10 characters of code, but the string contains only 7 characters.
