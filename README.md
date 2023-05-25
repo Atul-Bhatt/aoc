@@ -29,3 +29,10 @@ In a two dimensional grid, turn on or off the cells based on given instructions.
 - turn on 887,9 through 959,629
 - turn off 539,243 through 559,965
 - toggle 720,196 through 897,994
+
+### Day 7
+Perform bitwise operations based on instructions and find out what the final signal on the wire named "a" is.
+- 127 -> x
+- 456 -> y
+- x AND y -> a
+The wire "a" will contain contain signal 72
