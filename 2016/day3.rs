@@ -15,7 +15,7 @@ fn main() {
             side_vec[1].trim().parse::<i32>().unwrap(),
             side_vec[2].trim().parse::<i32>().unwrap(),
         );
-        // Find whether sum of two smaller sides is bigger than the biggest side.
+        // Find whether sum of any two sides is bigger than the remaining side.
         if ((x + y) > z) && ((z + y) > x) && ((x + z) > y) {
             count += 1;
         }

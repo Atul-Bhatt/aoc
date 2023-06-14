@@ -9,3 +9,7 @@ Walk a 2D grid based on instructions 'L', 'R'.
 Find out the security code for the bathroom.
 - Begin from 5 and move (within bounds) up, down, left and right.
 - Find the five digit code based on where you end up after each line of instruction.
+
+### Day 3
+Find the number of valid triangles given the sides.
+- A valid triangle is one whose any two sides have a sum larger than the remaining side.
