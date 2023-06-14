@@ -6,6 +6,7 @@ fn main() {
     let mut position = (1, 1);
 
     for line in input.lines() {
+        println!("Beginning {:?}", position);
         for ch in line.chars() {
             match ch {
                 'L' => {
@@ -64,7 +65,7 @@ fn main() {
             }
             _ => {}
         }
-        println!("{:?}", position);
+        println!("Ends {:?}", position);
     }
     println!("{code}");
 }
